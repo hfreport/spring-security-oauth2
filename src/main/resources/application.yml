@@ -1,0 +1,24 @@
+server:
+  port: 8979
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.boot.autoconfigure: DEBUG
+
+spring:
+  application:
+    name: oauth2-service
+  datasource:
+    url: jdbc:mysql://192.168.1.157:3306/iot_open_api?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    password: hoolink@2018
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: hoolink
+  redis:
+    password: hoolink@123
+    port: 6379
+    host: dev-redis.hoolink.com
+    database: 3
