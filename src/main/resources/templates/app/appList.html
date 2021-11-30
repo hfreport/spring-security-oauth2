@@ -9,51 +9,13 @@
 
 <div class="app-list">
     <ul>
-        <li th:each="">
+        <li th:each="app : ${appList}">
             <a href="#" class="item">
                 <div>
-                    <p>Balloon</p>
-                    <p>Price:$25</p>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="item">
-                <div>
-                    <p>Feeling</p>
-                    <p>Price:$25</p>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="item">
-                <div>
-                    <p>Elephant</p>
-                    <p>Price:$25</p>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="item">
-                <div>
-                    <p>Stamps</p>
-                    <p>Price:$25</p>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="item">
-                <div>
-                    <p>Monogram</p>
-                    <p>Price:$25</p>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="item">
-                <div>
-                    <p>Rolling</p>
-                    <p>Price:$25</p>
+                    <label>客户端ID</label>
+                    <p th:text="${app.clientId}"></p>
+                    <label>客户端秘钥</label>
+                    <p th:text="${app.clientSecret}"></p>
                 </div>
             </a>
         </li>
