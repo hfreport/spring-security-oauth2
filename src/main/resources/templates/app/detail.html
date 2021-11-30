@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>应用详情</title>
+</head>
+<body>
+    <div>
+        <a href="/manager/app/index">返回</a>
+
+        <div>
+        应用ID <span th:text="${app.clientId}"></span>
+<!--        应用密钥 <div th:text="${app?.clientSecret}"></div>-->
+        名称 <span th:text="${app.name}"></span>
+        责任人 <span th:text="${app.owner}"></span>
+        介绍 <span th:text="${app.summary}"></span>
+        模块 <span th:each="module : ${moduleList}">
+            <label>
+                <input type="checkbox" th:value="${module.code}" th:checked="${#lists.contains(app.moduleCodeList, module.code)}">
+                <span th:text="${module.name}"></span>
+            </label>
+        </span>
+        <button>保存</button>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>模块名称</th>
+                    <th>责任人</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

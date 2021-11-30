@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">>
+<head>
+    <meta charset="UTF-8">
+    <title>应用管理</title>
+</head>
+<body>
+<div>
+    <div class="right-content-title">
+        <p style="display: inline-block;width: 94%; font-size: 18px; margin-top: 0;">我的应用</p>
+        <button class="application-add-btn" id="app_create_btn">创建</button>
+    </div>
+<!--    <div class="my-application" th:each="app : ${appList}">-->
+<!--        <a class="application-item" th:href="${'/manager/app/detail/' + app.clientId}">-->
+<!--            <img src="/img/chip.jpg" alt="" style="margin-right: 12px;">-->
+<!--            <div class="application-item-right">-->
+<!--                <p style="color: #000;font-weight: 600;" th:text="${app.name}">应用</p>-->
+<!--                <span th:text="${app.summary}">简介</span>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <div id="app_add_dialog">
+        <form id="app_create_form" method="post">
+            <label>应用名称: <input type="text" name="name"></label>
+            <label>责任人: <input type="text" name="owner"></label>
+            <label>介绍: <textarea name="summary"></textarea></label>
+            <label>授权模块: </label><label><input name="module" value=""></label>
+        </form>
+    </div>
+</div>
+    <script>
+        $(function () {
+            $('#app_add_dialog').dialog({
+                autoOpen: false,
+                resizable: false,
+                height: 'auto',
+                modal: true,
+                title: "应用创建",
+                buttons: {
+                    '保存': function () {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/manager/app/create',
+                            data: JSON.stringify($('#app_create_form').serializeObject()),
+                            contentType: 'application/json',
+                            dataType: 'json'
+                        }).done(function (data, textStatus, jqXHR) {
+                            $(this).dialog('close')
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            alert("创建失败")
+                        })
+                    },
+                    '取消': function () {
+                        $(this).dialog('close')
+                    }
+                }
+            })
+
+            $('#app_create_btn').bind('click', function () {
+                $('#app_add_dialog').dialog('open')
+            })
+        })
+    </script>
+</body>
+</html>

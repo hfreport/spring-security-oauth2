@@ -43,14 +43,18 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         clients.inMemory()
                 .withClient("order-client")
                 .secret(passwordEncoder.encode("order-secret-8888"))
-                .authorizedGrantTypes("refresh_token", "authorization_code", "password")
-                .accessTokenValiditySeconds(120)
+                .authorizedGrantTypes("refresh_token", "client_credentials")
+                .accessTokenValiditySeconds(30)
+                .refreshTokenValiditySeconds(30)
+                .authorities("ROLE_ADMIN")
                 .scopes("all")
                 .and()
                 .withClient("third-app")
                 .secret(passwordEncoder.encode("user-secret-8888"))
-                .authorizedGrantTypes("refresh_token", "authorization_code", "password")
-                .accessTokenValiditySeconds(120)
+                .authorizedGrantTypes("refresh_token", "password")
+                .accessTokenValiditySeconds(30)
+                .refreshTokenValiditySeconds(30)
+                .authorities("client")
                 .scopes("all");
 
         // jdbc

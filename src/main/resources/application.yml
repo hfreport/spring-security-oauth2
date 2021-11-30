@@ -22,3 +22,7 @@ spring:
     port: 6379
     host: dev-redis.hoolink.com
     database: 3
+  mvc:
+    static-path-pattern: /static/**
+  thymeleaf:
+    cache: false

@@ -1,0 +1,89 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.top {
+    height: 65px;
+    border-bottom: 1px solid #000;
+}
+
+#top-title {
+    color: #e6e6e6;
+    font-size: 24px;
+    margin: 0;
+    height: 50px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.left{
+    width: 10%;
+    background-color: #666;
+    min-width: 150px;
+    height: 100vh;
+    display: inline-block;
+}
+.left-title{
+    color: #e6e6e6;
+    font-size: 24px;
+    border-bottom: 1px solid #000;
+    margin: 0px;
+    height: 50px;
+    padding-top: 15px;
+    text-align: center;
+}
+.left-bar{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+}
+.right{
+    width: 90%;
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    height: 100vh;
+    overflow: hidden;
+}
+.left-bar-item{
+    padding-left: 12px;
+}
+
+.right-content{
+    margin: 10px;
+    border: 1px solid #000;
+    padding: 15px;
+}
+.right-content .right-content-title{
+    border-bottom: 1px solid #d6d6d6;
+}
+.right-content-title .application-add-btn{
+    background-color: #1ba1e2;
+    display: inline-block;
+    width: 82px;
+    color: #fff;
+    line-height: 28px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.right-content .my-application{
+    margin-top: 12px;
+}
+.right-content .my-application .application-item{
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 10px;
+    margin-right: 45px;
+}
+.right-content .my-application .application-item .application-item-right{
+    display: inline-block;
+}
+.right-content .my-application .application-item .application-item-right span{
+    font-size: 14px;
+    display: inline-block;
+    margin-top: -5px;
+}

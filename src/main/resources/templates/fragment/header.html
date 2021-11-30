@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="top_nav" data-options="region:'north'" style="height:80px">
+        应用管理
+        <form method="post" action="/logout">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <button type="submit">退出</button>
+        </form>
+    </div>
+</html>
